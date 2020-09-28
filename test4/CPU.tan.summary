@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 15.015 ns
+From           : PC:inst7|Address[4]
+To             : result[31]
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 64.83 MHz ( period = 15.424 ns )
+From           : dataMemory:inst5|DataOut[15]
+To             : registerFile:inst8|register~15
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : registerFile:inst8|register~194
+To             : dataMemory:inst5|memory~354
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 10000
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 10000
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,1050 @@
+Analysis & Synthesis report for CPU
+Fri Sep 04 17:44:53 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Fri Sep 04 17:44:53 2020        ;
+; Quartus II Version            ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name                 ; CPU                                          ;
+; Top-level Entity Name         ; CPU                                          ;
+; Family                        ; Stratix II                                   ;
+; Logic utilization             ; N/A                                          ;
+;     Combinational ALUTs       ; 1,844                                        ;
+;     Dedicated logic registers ; 286                                          ;
+; Total registers               ; 286                                          ;
+; Total pins                    ; 148                                          ;
+; Total virtual pins            ; 0                                            ;
+; Total block memory bits       ; 0                                            ;
+; DSP block 9-bit elements      ; 0                                            ;
+; Total PLLs                    ; 0                                            ;
+; Total DLLs                    ; 0                                            ;
++-------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                        ; CPU                ; CPU                ;
+; Family name                                                  ; Stratix II         ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto DSP Block Replacement                                   ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM Block Balancing                                     ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Timing-Driven Synthesis                                      ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                  ; Off                ; Off                ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                        ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------+
+; instructionMemory.v              ; yes             ; User Verilog HDL File              ; F:/Tool/QuartusII/project/test4/instructionMemory.v ;
+; CPU.bdf                          ; yes             ; User Block Diagram/Schematic File  ; F:/Tool/QuartusII/project/test4/CPU.bdf             ;
+; controlUnit.v                    ; yes             ; User Verilog HDL File              ; F:/Tool/QuartusII/project/test4/controlUnit.v       ;
+; ALU.v                            ; yes             ; User Verilog HDL File              ; F:/Tool/QuartusII/project/test4/ALU.v               ;
+; signZeroExtend.v                 ; yes             ; User Verilog HDL File              ; F:/Tool/QuartusII/project/test4/signZeroExtend.v    ;
+; dataMemory.v                     ; yes             ; User Verilog HDL File              ; F:/Tool/QuartusII/project/test4/dataMemory.v        ;
+; registerFile.v                   ; yes             ; User Verilog HDL File              ; F:/Tool/QuartusII/project/test4/registerFile.v      ;
+; PC.v                             ; yes             ; User Verilog HDL File              ; F:/Tool/QuartusII/project/test4/PC.v                ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++-----------------------------------------------+-------+
+; Resource                                      ; Usage ;
++-----------------------------------------------+-------+
+; Estimated ALUTs Used                          ; 1844  ;
+; Dedicated logic registers                     ; 286   ;
+;                                               ;       ;
+; Estimated ALUTs Unavailable                   ; 376   ;
+;                                               ;       ;
+; Total combinational functions                 ; 1844  ;
+; Combinational ALUT usage by number of inputs  ;       ;
+;     -- 7 input functions                      ; 384   ;
+;     -- 6 input functions                      ; 48    ;
+;     -- 5 input functions                      ; 131   ;
+;     -- 4 input functions                      ; 102   ;
+;     -- <=3 input functions                    ; 1179  ;
+;                                               ;       ;
+; Combinational ALUTs by mode                   ;       ;
+;     -- normal mode                            ; 1328  ;
+;     -- extended LUT mode                      ; 384   ;
+;     -- arithmetic mode                        ; 132   ;
+;     -- shared arithmetic mode                 ; 0     ;
+;                                               ;       ;
+; Estimated ALUT/register pairs used            ; 2068  ;
+;                                               ;       ;
+; Total registers                               ; 286   ;
+;     -- Dedicated logic registers              ; 286   ;
+;     -- I/O registers                          ; 0     ;
+;                                               ;       ;
+; Estimated ALMs:  partially or completely used ; 1,034 ;
+;                                               ;       ;
+; I/O pins                                      ; 148   ;
+; Maximum fan-out node                          ; clk   ;
+; Maximum fan-out                               ; 286   ;
+; Total fan-out                                 ; 8704  ;
+; Average fan-out                               ; 3.82  ;
++-----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Library Name ;
++------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------+--------------+
+; |CPU                         ; 1844 (36)         ; 286 (0)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 148  ; 0            ; |CPU                         ; work         ;
+;    |ALU:inst|                ; 190 (190)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|ALU:inst                ; work         ;
+;    |PC:inst7|                ; 63 (63)           ; 30 (30)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|PC:inst7                ; work         ;
+;    |controlUnit:inst4|       ; 19 (19)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|controlUnit:inst4       ; work         ;
+;    |dataMemory:inst5|        ; 1344 (1344)       ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|dataMemory:inst5        ; work         ;
+;    |instructionMemory:inst6| ; 18 (18)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|instructionMemory:inst6 ; work         ;
+;    |registerFile:inst8|      ; 174 (174)         ; 256 (256)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|registerFile:inst8      ; work         ;
++------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                       ;
++-------------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                            ; Latch Enable Signal      ; Free of Timing Hazards ;
++-------------------------------------------------------+--------------------------+------------------------+
+; dataMemory:inst5|DataOut[31]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[30]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[29]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[28]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[27]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[26]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[25]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[24]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[23]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[22]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[21]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[20]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[19]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[18]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[17]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[16]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[15]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[14]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[13]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[12]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[11]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[10]                          ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[9]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[8]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[7]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[6]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[5]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[4]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[3]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[2]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[1]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|DataOut[0]                           ; controlUnit:inst4|Equal4 ; yes                    ;
+; dataMemory:inst5|memory~191                           ; rtl~0                    ; yes                    ;
+; dataMemory:inst5|memory~255                           ; rtl~1                    ; yes                    ;
+; dataMemory:inst5|memory~159                           ; rtl~2                    ; yes                    ;
+; dataMemory:inst5|memory~63                            ; rtl~3                    ; yes                    ;
+; dataMemory:inst5|memory~127                           ; rtl~4                    ; yes                    ;
+; dataMemory:inst5|memory~31                            ; rtl~5                    ; yes                    ;
+; dataMemory:inst5|memory~95                            ; rtl~6                    ; yes                    ;
+; dataMemory:inst5|memory~223                           ; rtl~7                    ; yes                    ;
+; dataMemory:inst5|memory~447                           ; rtl~8                    ; yes                    ;
+; dataMemory:inst5|memory~511                           ; rtl~9                    ; yes                    ;
+; dataMemory:inst5|memory~415                           ; rtl~10                   ; yes                    ;
+; dataMemory:inst5|memory~319                           ; rtl~11                   ; yes                    ;
+; dataMemory:inst5|memory~383                           ; rtl~12                   ; yes                    ;
+; dataMemory:inst5|memory~287                           ; rtl~13                   ; yes                    ;
+; dataMemory:inst5|memory~351                           ; rtl~14                   ; yes                    ;
+; dataMemory:inst5|memory~479                           ; rtl~15                   ; yes                    ;
+; dataMemory:inst5|memory~703                           ; rtl~16                   ; yes                    ;
+; dataMemory:inst5|memory~767                           ; rtl~17                   ; yes                    ;
+; dataMemory:inst5|memory~671                           ; rtl~18                   ; yes                    ;
+; dataMemory:inst5|memory~575                           ; rtl~19                   ; yes                    ;
+; dataMemory:inst5|memory~639                           ; rtl~20                   ; yes                    ;
+; dataMemory:inst5|memory~543                           ; rtl~21                   ; yes                    ;
+; dataMemory:inst5|memory~607                           ; rtl~22                   ; yes                    ;
+; dataMemory:inst5|memory~735                           ; rtl~23                   ; yes                    ;
+; dataMemory:inst5|memory~959                           ; rtl~24                   ; yes                    ;
+; dataMemory:inst5|memory~1023                          ; rtl~25                   ; yes                    ;
+; dataMemory:inst5|memory~927                           ; rtl~26                   ; yes                    ;
+; dataMemory:inst5|memory~831                           ; rtl~27                   ; yes                    ;
+; dataMemory:inst5|memory~895                           ; rtl~28                   ; yes                    ;
+; dataMemory:inst5|memory~799                           ; rtl~29                   ; yes                    ;
+; dataMemory:inst5|memory~863                           ; rtl~30                   ; yes                    ;
+; dataMemory:inst5|memory~991                           ; rtl~31                   ; yes                    ;
+; dataMemory:inst5|memory~190                           ; rtl~0                    ; yes                    ;
+; dataMemory:inst5|memory~254                           ; rtl~1                    ; yes                    ;
+; dataMemory:inst5|memory~158                           ; rtl~2                    ; yes                    ;
+; dataMemory:inst5|memory~62                            ; rtl~3                    ; yes                    ;
+; dataMemory:inst5|memory~126                           ; rtl~4                    ; yes                    ;
+; dataMemory:inst5|memory~30                            ; rtl~5                    ; yes                    ;
+; dataMemory:inst5|memory~94                            ; rtl~6                    ; yes                    ;
+; dataMemory:inst5|memory~222                           ; rtl~7                    ; yes                    ;
+; dataMemory:inst5|memory~446                           ; rtl~8                    ; yes                    ;
+; dataMemory:inst5|memory~510                           ; rtl~9                    ; yes                    ;
+; dataMemory:inst5|memory~414                           ; rtl~10                   ; yes                    ;
+; dataMemory:inst5|memory~318                           ; rtl~11                   ; yes                    ;
+; dataMemory:inst5|memory~382                           ; rtl~12                   ; yes                    ;
+; dataMemory:inst5|memory~286                           ; rtl~13                   ; yes                    ;
+; dataMemory:inst5|memory~350                           ; rtl~14                   ; yes                    ;
+; dataMemory:inst5|memory~478                           ; rtl~15                   ; yes                    ;
+; dataMemory:inst5|memory~702                           ; rtl~16                   ; yes                    ;
+; dataMemory:inst5|memory~766                           ; rtl~17                   ; yes                    ;
+; dataMemory:inst5|memory~670                           ; rtl~18                   ; yes                    ;
+; dataMemory:inst5|memory~574                           ; rtl~19                   ; yes                    ;
+; dataMemory:inst5|memory~638                           ; rtl~20                   ; yes                    ;
+; dataMemory:inst5|memory~542                           ; rtl~21                   ; yes                    ;
+; dataMemory:inst5|memory~606                           ; rtl~22                   ; yes                    ;
+; dataMemory:inst5|memory~734                           ; rtl~23                   ; yes                    ;
+; dataMemory:inst5|memory~958                           ; rtl~24                   ; yes                    ;
+; dataMemory:inst5|memory~1022                          ; rtl~25                   ; yes                    ;
+; dataMemory:inst5|memory~926                           ; rtl~26                   ; yes                    ;
+; dataMemory:inst5|memory~830                           ; rtl~27                   ; yes                    ;
+; dataMemory:inst5|memory~894                           ; rtl~28                   ; yes                    ;
+; dataMemory:inst5|memory~798                           ; rtl~29                   ; yes                    ;
+; dataMemory:inst5|memory~862                           ; rtl~30                   ; yes                    ;
+; dataMemory:inst5|memory~990                           ; rtl~31                   ; yes                    ;
+; dataMemory:inst5|memory~189                           ; rtl~0                    ; yes                    ;
+; dataMemory:inst5|memory~253                           ; rtl~1                    ; yes                    ;
+; dataMemory:inst5|memory~157                           ; rtl~2                    ; yes                    ;
+; dataMemory:inst5|memory~61                            ; rtl~3                    ; yes                    ;
+; Number of user-specified and inferred latches = 1056  ;                          ;                        ;
++-------------------------------------------------------+--------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------+
+; Registers Removed During Synthesis                           ;
++-----------------------------------------+--------------------+
+; Register name                           ; Reason for Removal ;
++-----------------------------------------+--------------------+
+; registerFile:inst8|register~256         ; Lost fanout        ;
+; registerFile:inst8|register~257         ; Lost fanout        ;
+; registerFile:inst8|register~258         ; Lost fanout        ;
+; registerFile:inst8|register~259         ; Lost fanout        ;
+; registerFile:inst8|register~260         ; Lost fanout        ;
+; registerFile:inst8|register~261         ; Lost fanout        ;
+; registerFile:inst8|register~262         ; Lost fanout        ;
+; registerFile:inst8|register~263         ; Lost fanout        ;
+; registerFile:inst8|register~264         ; Lost fanout        ;
+; registerFile:inst8|register~265         ; Lost fanout        ;
+; registerFile:inst8|register~266         ; Lost fanout        ;
+; registerFile:inst8|register~267         ; Lost fanout        ;
+; registerFile:inst8|register~268         ; Lost fanout        ;
+; registerFile:inst8|register~269         ; Lost fanout        ;
+; registerFile:inst8|register~270         ; Lost fanout        ;
+; registerFile:inst8|register~271         ; Lost fanout        ;
+; registerFile:inst8|register~272         ; Lost fanout        ;
+; registerFile:inst8|register~273         ; Lost fanout        ;
+; registerFile:inst8|register~274         ; Lost fanout        ;
+; registerFile:inst8|register~275         ; Lost fanout        ;
+; registerFile:inst8|register~276         ; Lost fanout        ;
+; registerFile:inst8|register~277         ; Lost fanout        ;
+; registerFile:inst8|register~278         ; Lost fanout        ;
+; registerFile:inst8|register~279         ; Lost fanout        ;
+; registerFile:inst8|register~280         ; Lost fanout        ;
+; registerFile:inst8|register~281         ; Lost fanout        ;
+; registerFile:inst8|register~282         ; Lost fanout        ;
+; registerFile:inst8|register~283         ; Lost fanout        ;
+; registerFile:inst8|register~284         ; Lost fanout        ;
+; registerFile:inst8|register~285         ; Lost fanout        ;
+; registerFile:inst8|register~286         ; Lost fanout        ;
+; registerFile:inst8|register~287         ; Lost fanout        ;
+; registerFile:inst8|register~288         ; Lost fanout        ;
+; registerFile:inst8|register~289         ; Lost fanout        ;
+; registerFile:inst8|register~290         ; Lost fanout        ;
+; registerFile:inst8|register~291         ; Lost fanout        ;
+; registerFile:inst8|register~292         ; Lost fanout        ;
+; registerFile:inst8|register~293         ; Lost fanout        ;
+; registerFile:inst8|register~294         ; Lost fanout        ;
+; registerFile:inst8|register~295         ; Lost fanout        ;
+; registerFile:inst8|register~296         ; Lost fanout        ;
+; registerFile:inst8|register~297         ; Lost fanout        ;
+; registerFile:inst8|register~298         ; Lost fanout        ;
+; registerFile:inst8|register~299         ; Lost fanout        ;
+; registerFile:inst8|register~300         ; Lost fanout        ;
+; registerFile:inst8|register~301         ; Lost fanout        ;
+; registerFile:inst8|register~302         ; Lost fanout        ;
+; registerFile:inst8|register~303         ; Lost fanout        ;
+; registerFile:inst8|register~304         ; Lost fanout        ;
+; registerFile:inst8|register~305         ; Lost fanout        ;
+; registerFile:inst8|register~306         ; Lost fanout        ;
+; registerFile:inst8|register~307         ; Lost fanout        ;
+; registerFile:inst8|register~308         ; Lost fanout        ;
+; registerFile:inst8|register~309         ; Lost fanout        ;
+; registerFile:inst8|register~310         ; Lost fanout        ;
+; registerFile:inst8|register~311         ; Lost fanout        ;
+; registerFile:inst8|register~312         ; Lost fanout        ;
+; registerFile:inst8|register~313         ; Lost fanout        ;
+; registerFile:inst8|register~314         ; Lost fanout        ;
+; registerFile:inst8|register~315         ; Lost fanout        ;
+; registerFile:inst8|register~316         ; Lost fanout        ;
+; registerFile:inst8|register~317         ; Lost fanout        ;
+; registerFile:inst8|register~318         ; Lost fanout        ;
+; registerFile:inst8|register~319         ; Lost fanout        ;
+; registerFile:inst8|register~320         ; Lost fanout        ;
+; registerFile:inst8|register~321         ; Lost fanout        ;
+; registerFile:inst8|register~322         ; Lost fanout        ;
+; registerFile:inst8|register~323         ; Lost fanout        ;
+; registerFile:inst8|register~324         ; Lost fanout        ;
+; registerFile:inst8|register~325         ; Lost fanout        ;
+; registerFile:inst8|register~326         ; Lost fanout        ;
+; registerFile:inst8|register~327         ; Lost fanout        ;
+; registerFile:inst8|register~328         ; Lost fanout        ;
+; registerFile:inst8|register~329         ; Lost fanout        ;
+; registerFile:inst8|register~330         ; Lost fanout        ;
+; registerFile:inst8|register~331         ; Lost fanout        ;
+; registerFile:inst8|register~332         ; Lost fanout        ;
+; registerFile:inst8|register~333         ; Lost fanout        ;
+; registerFile:inst8|register~334         ; Lost fanout        ;
+; registerFile:inst8|register~335         ; Lost fanout        ;
+; registerFile:inst8|register~336         ; Lost fanout        ;
+; registerFile:inst8|register~337         ; Lost fanout        ;
+; registerFile:inst8|register~338         ; Lost fanout        ;
+; registerFile:inst8|register~339         ; Lost fanout        ;
+; registerFile:inst8|register~340         ; Lost fanout        ;
+; registerFile:inst8|register~341         ; Lost fanout        ;
+; registerFile:inst8|register~342         ; Lost fanout        ;
+; registerFile:inst8|register~343         ; Lost fanout        ;
+; registerFile:inst8|register~344         ; Lost fanout        ;
+; registerFile:inst8|register~345         ; Lost fanout        ;
+; registerFile:inst8|register~346         ; Lost fanout        ;
+; registerFile:inst8|register~347         ; Lost fanout        ;
+; registerFile:inst8|register~348         ; Lost fanout        ;
+; registerFile:inst8|register~349         ; Lost fanout        ;
+; registerFile:inst8|register~350         ; Lost fanout        ;
+; registerFile:inst8|register~351         ; Lost fanout        ;
+; registerFile:inst8|register~352         ; Lost fanout        ;
+; registerFile:inst8|register~353         ; Lost fanout        ;
+; registerFile:inst8|register~354         ; Lost fanout        ;
+; registerFile:inst8|register~355         ; Lost fanout        ;
+; Total Number of Removed Registers = 768 ;                    ;
++-----------------------------------------+--------------------+
+* Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 286   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 29    ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 282   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; Yes        ; |CPU|PC:inst7|Address[2]   ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 160 ALUTs            ; 0 ALUTs                ; No         ; |CPU|ALU:inst|Mux0         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri Sep 04 17:44:49 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
+Info: Found 1 design units, including 1 entities, in source file instructionMemory.v
+    Info: Found entity 1: instructionMemory
+Info: Found 1 design units, including 1 entities, in source file CPU.bdf
+    Info: Found entity 1: CPU
+Info: Found 1 design units, including 1 entities, in source file controlUnit.v
+    Info: Found entity 1: controlUnit
+Info: Found 1 design units, including 1 entities, in source file ALU.v
+    Info: Found entity 1: ALU
+Info: Found 1 design units, including 1 entities, in source file signZeroExtend.v
+    Info: Found entity 1: signZeroExtend
+Info: Found 1 design units, including 1 entities, in source file dataMemory.v
+    Info: Found entity 1: dataMemory
+Info: Found 1 design units, including 1 entities, in source file registerFile.v
+    Info: Found entity 1: registerFile
+Info: Found 1 design units, including 1 entities, in source file PC.v
+    Info: Found entity 1: PC
+Info: Elaborating entity "CPU" for the top level hierarchy
+Warning: Block or symbol "controlUnit" of instance "inst4" overlaps another block or symbol
+Warning: Block or symbol "registerFile" of instance "inst8" overlaps another block or symbol
+Info: Elaborating entity "controlUnit" for hierarchy "controlUnit:inst4"
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(9): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(10): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(11): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(12): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(14): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(15): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(16): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(17): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(18): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(19): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at controlUnit.v(20): truncated value with size 32 to match size of target (1)
+Info: Elaborating entity "ALU" for hierarchy "ALU:inst"
+Warning (10230): Verilog HDL assignment warning at ALU.v(21): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ALU.v(26): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ALU.v(31): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ALU.v(36): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ALU.v(41): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ALU.v(46): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ALU.v(51): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ALU.v(56): truncated value with size 32 to match size of target (1)
+Info: Elaborating entity "signZeroExtend" for hierarchy "signZeroExtend:inst9"
+Info: Elaborating entity "instructionMemory" for hierarchy "instructionMemory:inst6"
+Info: Elaborating entity "PC" for hierarchy "PC:inst7"
+Warning (10240): Verilog HDL Always Construct warning at PC.v(13): inferring latch(es) for variable "Address", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Address[0]" at PC.v(18)
+Info (10041): Inferred latch for "Address[1]" at PC.v(18)
+Info: Elaborating entity "registerFile" for hierarchy "registerFile:inst8"
+Info: Elaborating entity "dataMemory" for hierarchy "dataMemory:inst5"
+Warning (10235): Verilog HDL Always Construct warning at dataMemory.v(12): variable "DAddr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at dataMemory.v(10): inferring latch(es) for variable "DataOut", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "DataOut[0]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[1]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[2]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[3]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[4]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[5]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[6]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[7]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[8]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[9]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[10]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[11]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[12]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[13]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[14]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[15]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[16]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[17]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[18]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[19]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[20]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[21]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[22]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[23]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[24]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[25]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[26]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[27]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[28]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[29]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[30]" at dataMemory.v(11)
+Info (10041): Inferred latch for "DataOut[31]" at dataMemory.v(11)
+Info: Found 1 instances of uninferred RAM logic
+    Info: RAM logic "registerFile:inst8|register" is uninferred due to asynchronous read logic
+Warning: Memory Initialization File or Hexadecimal (Intel-Format) File "CPU.ram0_registerFile_e16e767d.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning: Latch dataMemory:inst5|DataOut[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|DataOut[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal PC:inst7|Address[2]
+Warning: Latch dataMemory:inst5|memory~164 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~228 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~132 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~36 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~100 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~4 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~68 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~196 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~420 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~484 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~388 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~292 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~356 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~260 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~324 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~452 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~676 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~740 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~644 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~548 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~612 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~516 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~580 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~708 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~932 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~996 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~900 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~804 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~868 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~772 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~836 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~964 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~163 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~227 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~131 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~35 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~99 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~3 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~67 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~195 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~419 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~483 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~387 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~291 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~355 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~259 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~323 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~451 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~675 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~739 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~643 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~547 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~611 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~515 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~579 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~707 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~931 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~995 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~899 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~803 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~867 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~771 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~835 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~963 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~162 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~226 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~130 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~34 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~98 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~2 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~66 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~194 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~418 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~482 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~386 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~290 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~354 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~258 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~322 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~450 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~674 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~738 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~642 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~546 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~610 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~514 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~578 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~706 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~930 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~994 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~898 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~802 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~866 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~770 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~834 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~962 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~161 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~225 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~129 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~33 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~97 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~1 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~65 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~193 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~417 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~481 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~385 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~289 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~353 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~257 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~321 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~449 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~673 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~737 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~641 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~545 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~609 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~513 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~577 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~705 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~929 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~993 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~897 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~801 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~865 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~769 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~833 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~961 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~160 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~224 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~128 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~32 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~96 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~0 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~64 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~192 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~416 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~480 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~384 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~288 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~352 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~256 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~320 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~448 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~672 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~736 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~640 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~544 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~608 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~512 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~576 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~704 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~928 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~992 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~896 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~800 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~864 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~768 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~832 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Latch dataMemory:inst5|memory~960 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal registerFile:inst8|register~synth
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "curPC[1]" is stuck at GND
+    Warning (13410): Pin "curPC[0]" is stuck at GND
+    Warning (13410): Pin "rt[4]" is stuck at GND
+    Warning (13410): Pin "rt[3]" is stuck at GND
+Info: 768 registers lost all their fanouts during netlist optimizations. The first 100 are displayed below.
+    Info: Register "registerFile:inst8|register~256" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~257" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~258" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~259" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~260" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~261" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~262" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~263" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~264" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~265" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~266" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~267" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~268" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~269" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~270" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~271" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~272" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~273" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~274" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~275" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~276" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~277" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~278" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~279" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~280" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~281" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~282" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~283" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~284" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~285" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~286" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~287" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~288" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~289" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~290" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~291" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~292" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~293" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~294" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~295" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~296" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~297" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~298" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~299" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~300" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~301" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~302" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~303" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~304" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~305" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~306" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~307" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~308" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~309" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~310" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~311" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~312" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~313" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~314" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~315" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~316" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~317" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~318" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~319" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~320" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~321" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~322" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~323" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~324" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~325" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~326" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~327" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~328" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~329" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~330" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~331" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~332" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~333" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~334" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~335" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~336" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~337" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~338" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~339" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~340" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~341" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~342" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~343" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~344" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~345" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~346" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~347" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~348" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~349" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~350" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~351" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~352" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~353" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~354" lost all its fanouts during netlist optimizations.
+    Info: Register "registerFile:inst8|register~355" lost all its fanouts during netlist optimizations.
+    Info: List truncated at 100 items
+Info: Implemented 2248 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 146 output pins
+    Info: Implemented 2100 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 414 warnings
+    Info: Peak virtual memory: 262 megabytes
+    Info: Processing ended: Fri Sep 04 17:44:53 2020
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+
